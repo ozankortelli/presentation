@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presentation</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css?family=Merriweather:400,900,900i" rel="stylesheet">
+</head>
+
+<body>
+    <div class="containercodes">
+        <img class="home-page-banner" src="coffeecomputer2.jpg" alt="coffee">
+        <div class="my-info">
+          <div class="my-name">
+            <h1>OZAN KÖRTELLİ</h1>
+          </div>
+          <div class="my-title">Frontend Developer</div>
+          <div class="navigation-menu">
+            <div class="navigation-item"><a href="index.html" style="color: black;">HOME</a> </div>
+            <div class="navigation-item"><a href="courses.html" style="color: black;">COURSES</a> </div>
+            <div class="navigation-item"><a href="codes.html" style="color: black;">CODES</a> </div>
+            <div class="navigation-item"><a href="aboutme.html" style="color: black;">ABOUT ME</a> </div>
+          </div>
+        </div>
+      </div>
+    <div class="container2">
+        <div>
+            <h1>What is HTML ?</h1>
+            <p>HyperText Markup Language is the standard text markup language used to create web pages. The latest
+                version of the language is HTML5. HTML cannot be defined as a programming language. Because a program
+                that works on its own cannot be written with HTML codes.</p>
+        </div>
+    </div>
+    <div class="container3.">
+        <div class="img-slider">
+            <div class="slide active">
+                <img src="1.jpg" alt="">
+                <div class="info">
+                    <h2 class="welcomeonslide">WELCOME</h2>
+                    <ul class="listonslide">
+                        <h1 class="contentsonslide">
+                            Contents:</h1>
+                        <li>Roadmap</li>
+                        <li>CV(1)</li>
+                        <li>CV(2)</li>
+                        <li>Aims</li>
+                    </ul>
+
+                </div>
+            </div>
+            <div class="slide">
+                <img src="giriş/roadmap.png" alt="">
+
+            </div>
+            <div class="slide">
+                <img src="giriş/cv1.png" alt="">
+
+            </div>
+            <div class="slide">
+                <img src="giriş/cv2.png" alt="">
+
+            </div>
+            <div class="slide">
+                <img src="5.jpg" alt="">
+                <div class="info">
+                    <h2>Aims</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua.</p>
+                </div>
+            </div>
+            <div class="navigation">
+                <div class="btn active"></div>
+                <div class="btn"></div>
+                <div class="btn"></div>
+                <div class="btn"></div>
+                <div class="btn"></div>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+            var slides = document.querySelectorAll('.slide');
+            var btns = document.querySelectorAll('.btn');
+            let currentSlide = 1;
+
+            var manualNav = function (manual) {
+                slides.forEach((slide) => {
+                    slide.classList.remove('active');
+
+                    btns.forEach((btn) => {
+                        btn.classList.remove('active');
+                    });
+                });
+
+                slides[manual].classList.add('active');
+                btns[manual].classList.add('active');
+            }
+
+            btns.forEach((btn, i) => {
+                btn.addEventListener("click", () => {
+                    manualNav(i);
+                    currentSlide = i;
+                });
+            });
+
+
+            var repeat = function (activeClass) {
+                let active = document.getElementsByClassName('active');
+                let i = 1;
+
+                var repeater = () => {
+                    setTimeout(function () {
+                        [...active].forEach((activeSlide) => {
+                            activeSlide.classList.remove('active');
+                        });
+
+                        slides[i].classList.add('active');
+                        btns[i].classList.add('active');
+                        i++;
+
+                        if (slides.length == i) {
+                            i = 0;
+                        }
+                        if (i >= slides.length) {
+                            return;
+                        }
+                        repeater();
+                    }, 10000);
+                }
+                repeater();
+            }
+            repeat();
+        </script>
+
+    </div>
+    <div class="container4">
+        <div>
+            <h1>What is CSS ? </h1>
+            <p>Cascading Style Sheets is a markup language that offers extra possibilities in text and format formatting
+                in addition to HTML.</p>
+        </div>
+    </div>
+    <div class="container5">
+        <div>
+            <h1>What is JavaScript ? </h1>
+            <p>JavaScript is a programming language that, along with HTML and CSS, is one of the core technologies of
+                the World Wide Web. More than 97% of websites use client-side JavaScript for web page gestures, and the
+                code used often includes third-party libraries.</p>
+        </div>
+    </div>
+    <div>
+        <div class="footer">
+            <ul class="editlist">
+                <ul class="editlist-links"></ul>
+                <li class="li1"><a href="index.html" style="color: white;">HOME</a></li>
+                <li class="li2"><a href="courses.html" style="color: white;">COURSES</a></li>
+                <li class="li3"><a href="codes.html" style="color: white;">CODES</a></li>
+                <li class="li4"><a href="aboutme.html" style="color: white;">ABOUT-ME</a></li>
+            </ul>
+        </div>
+        <div class="contact">
+            <h1 class="contact">CONTACT</h1>
+        </div>
+        <div>
+            <p class="contactmail">ozankortelli@gmail.com</p>
+            <p class="contactphone">0538*******</p>
+        </div>
+        <div>
+            <p class="Copyright">Copyright © 2022 Ozan Körtelli</p>
+
+        </div>
+        <div class="logos">
+            <a href="https://www.linkedin.com/in/ozan-k%C3%B6rtelli-92b74a215/" > <i class="fa fa-linkedin-square"
+                    style="font-size:36px; color:white"></i></a>
+            <a href="https://github.com/ozankortelli"> <i class="fa fa-github-square" style="font-size:36px; color:white"></i></a>
+            <a
+                href="https://open.spotify.com/playlist/3OYKqG41B9pNePC6ajbEs6?si=7DwLOmvzQTONcYBT6_rPKw&utm_source=whatsapp"><i
+                    class="fa fa-spotify" style="font-size:36px ; color:white"></i></a>
+
+
+        </div>
+       
+    </div>
+
+</body>
+
+</html>
